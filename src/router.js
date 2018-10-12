@@ -6,7 +6,14 @@ Vue.use(Router);
 const routes = [
   {
     path: '*',
-    redirect: '/goods'
+    redirect: '/index'
+  },
+  {
+    name: 'index',
+    component: () => import('./view/index'),
+    meta: {
+      title: '首页'
+    }
   },
   {
     name: 'user',

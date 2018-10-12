@@ -2,6 +2,7 @@ import './common/rem';
 import Vue from 'vue'
 import App from './App.vue'
 import { router } from './router';
+import { Lazyload } from 'vant';
 
 import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
@@ -14,3 +15,4 @@ new Vue({
   el: '#app',
   render: h => h(App)
 });
+Vue.use(Lazyload);
