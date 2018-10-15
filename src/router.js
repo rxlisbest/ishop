@@ -35,6 +35,13 @@ const routes = [
     meta: {
       title: '商品详情'
     }
+  },
+  {
+    name: 'goods_category',
+    component: () => import('./view/goods_category'),
+    meta: {
+      title: '商品分类'
+    }
   }
 ];
 
