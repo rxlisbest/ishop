@@ -5,15 +5,24 @@
       placeholder="请输入搜索关键词"
       show-action
       @search="onSearch"
-    >
+      class="goods-category-search">
       <div slot="action" @click="onSearch">搜索</div>
     </van-search>
-    <van-row>
+    <van-row class="goods-category-body">
       <van-col span="6" class="goods-category-left">
         <div class="goods-category-left-item">
           <span>一级分类</span>
         </div>
         <div class="goods-category-left-item active">
+          <span>一级分类</span>
+        </div>
+        <div class="goods-category-left-item">
+          <span>一级分类</span>
+        </div>
+        <div class="goods-category-left-item">
+          <span>一级分类</span>
+        </div>
+        <div class="goods-category-left-item">
           <span>一级分类</span>
         </div>
         <div class="goods-category-left-item">
@@ -92,8 +101,49 @@
             </van-col>
           </van-row>
         </div>
-      </van-col>
-      <van-col span="18" class="goods-category-right">
+
+        <span>二级分类</span>
+        <div class="goods-category-right-items">
+          <van-row>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+            <van-col span="8" class="goods-category-right-item">
+              <a href="#">
+                <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9198618367adab4d30540358cd4b31c8601e4eb.jpg">
+                <span>三级分类</span>
+              </a>
+            </van-col>
+          </van-row>
+        </div>
+
         <span>二级分类</span>
         <div class="goods-category-right-items">
           <van-row>
@@ -173,9 +223,23 @@ export default {
 
 <style lang="less">
 .goods-category {
+  overflow: none;
+  &-body{
+    position: fixed;
+    top: 44px;
+  }
+  &-search{
+    position: fixed;
+    right: 0;
+    width: 100%;
+  }
   &-left {
     background: #FFFFFF;
-    height: 100%;
+    bottom: 0;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 44px;
     &-item{
       text-align: center;
       position: relative;
@@ -195,9 +259,16 @@ export default {
   }
   &-right{
     padding: 1em;
+    position: fixed;
+    bottom: 0;
+    top: 44px;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     &-items{
       background: #FFFFFF;
       margin-top: 6px;
+      margin-bottom: 16px;
     }
     &-item{
       padding: 0.8em 0.8em;
