@@ -1,21 +1,60 @@
 <template>
-  <div>
-    <van-checkbox-group class="card-goods" v-model="checkedGoods">
-      <van-checkbox
-        class="card-goods__item"
-        v-for="item in goods"
-        :key="item.id"
-        :name="item.id"
-      >
-        <van-card
-          :title="item.title"
-          :desc="item.desc"
-          :num="item.num"
-          :price="formatPrice(item.price)"
-          :thumb="item.thumb"
-        />
-      </van-checkbox>
-    </van-checkbox-group>
+  <div class="index">
+    <van-nav-bar
+      title="购物车"
+      left-text="返回"
+      right-text="按钮"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <div class="index-shop">
+      <div class="index-shop-item">
+        <van-cell-group>
+          <van-cell>
+            <van-checkbox v-model="checked">复选框</van-checkbox>
+          </van-cell>
+        </van-cell-group>
+        <van-checkbox-group class="card-goods" v-model="checkedGoods">
+          <van-checkbox
+            class="card-goods__item"
+            v-for="item in goods"
+            :key="item.id"
+            :name="item.id"
+          >
+            <van-card
+              :title="item.title"
+              :desc="item.desc"
+              :num="item.num"
+              :price="formatPrice(item.price)"
+              :thumb="item.thumb"
+            />
+          </van-checkbox>
+        </van-checkbox-group>
+      </div>
+      <div class="index-shop-item">
+        <van-cell-group>
+          <van-cell value="猜你喜欢" />
+        </van-cell-group>
+        <van-checkbox-group class="card-goods" v-model="checkedGoods">
+          <van-checkbox
+            class="card-goods__item"
+            v-for="item in goods"
+            :key="item.id"
+            :name="item.id"
+          >
+            <van-card
+              :title="item.title"
+              :desc="item.desc"
+              :num="item.num"
+              :price="formatPrice(item.price)"
+              :thumb="item.thumb"
+            />
+          </van-checkbox>
+        </van-checkbox-group>
+      </div>
+    </div>
+    
     <van-submit-bar
       :price="totalPrice"
       :disabled="!checkedGoods.length"
@@ -26,13 +65,25 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from 'vant';
+import { 
+  Checkbox, 
+  CheckboxGroup, 
+  Card, 
+  SubmitBar, 
+  Toast,
+  NavBar, 
+  CellGroup,
+  Cell,
+} from 'vant';
 export default {
   components: {
     [Card.name]: Card,
     [Checkbox.name]: Checkbox,
     [SubmitBar.name]: SubmitBar,
-    [CheckboxGroup.name]: CheckboxGroup
+    [CheckboxGroup.name]: CheckboxGroup,
+    [NavBar.name]: NavBar,
+    [CellGroup.name]: CellGroup,
+    [Cell.name]: Cell,
   },
   data() {
     return {
@@ -102,6 +153,13 @@ export default {
     }
     .van-card__price {
       color: #f44;
+    }
+  }
+}
+.index{
+  &-shop{
+    &-item{
+      margin-top: 12px;
     }
   }
 }
