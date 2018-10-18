@@ -29,18 +29,21 @@
       <van-cell icon="gold-coin" title="我的优惠券" is-link />
       <van-cell icon="gift" title="我收到的礼物" is-link />
     </van-cell-group>
+
+    <ishop-footer :active="3"></ishop-footer>
   </div>
 </template>
 
 <script>
 import { Row, Col, Icon, Cell, CellGroup } from 'vant';
+
 export default {
   components: {
     [Row.name]: Row,
     [Col.name]: Col,
     [Icon.name]: Icon,
     [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
+    [CellGroup.name]: CellGroup,
   }
 };
 </script>
