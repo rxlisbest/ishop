@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <van-tabbar v-model="active">
+    <van-tabbar :value="active">
       <van-tabbar-item icon="home" :to="{name: 'index'}">
         首页
       </van-tabbar-item>

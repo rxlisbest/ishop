@@ -39,14 +39,7 @@
         </van-col>
       </van-row>
     </van-list>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home" :to="{ name: 'index'}">
-        首页
-      </van-tabbar-item>
-      <van-tabbar-item icon="more-o" :to="{ name: 'goods_category'}">分类</van-tabbar-item>
-      <van-tabbar-item icon="cart" info="5" :to="{ name: 'cart'}">购物车</van-tabbar-item>
-      <van-tabbar-item icon="contact" :to="{ name: 'user'}">我的</van-tabbar-item>
-    </van-tabbar>
+    <ishop-footer :active="active"></ishop-footer>
   </div>
 </template>
 

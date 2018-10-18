@@ -30,7 +30,7 @@
       <van-cell icon="gift" title="我收到的礼物" is-link />
     </van-cell-group>
 
-    <ishop-footer :active="3"></ishop-footer>
+    <ishop-footer :active="active"></ishop-footer>
   </div>
 </template>
 
@@ -44,6 +44,11 @@ export default {
     [Icon.name]: Icon,
     [Cell.name]: Cell,
     [CellGroup.name]: CellGroup,
+  },
+  data() {
+    return {
+      active: 3
+    }
   }
 };
 </script>
