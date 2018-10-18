@@ -127,6 +127,12 @@ export default {
     },
     onSubmit() {
       Toast('点击结算');
+    },
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    onClickRight() {
+      
     }
   }
 };
