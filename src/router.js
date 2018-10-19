@@ -49,6 +49,20 @@ const routes = [
     meta: {
       title: '订单'
     }
+  },
+  {
+    name: 'address',
+    component: () => import('./view/address'),
+    meta: {
+      title: '地址列表'
+    }
+  },
+  {
+    name: 'address/add',
+    component: () => import('./view/address/add'),
+    meta: {
+      title: '地址新增'
+    }
   }
 ];
 
