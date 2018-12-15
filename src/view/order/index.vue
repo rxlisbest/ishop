@@ -120,6 +120,7 @@ export default {
 <style lang="less">
 .index{
   &-shop{
+    margin-bottom: 60px;
     &-item{
       margin-top: 12px;
       &-total{
